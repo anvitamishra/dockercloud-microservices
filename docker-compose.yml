@@ -2,7 +2,7 @@ version: '2'
 services:
   api-server:
     build: .
-    image: dashersw/dockercloud-microservices:api
+    image: anvitamishra/dockercloud-microservices:api
     command: node api-server
     environment:
       - VIRTUAL_HOST=local.api.cloud
@@ -11,7 +11,7 @@ services:
     restart: always
   time-service:
     build: .
-    image: dashersw/dockercloud-microservices:time
+    image: anvitamishra/dockercloud-microservices:time
     command: node time-service
     restart: always
   proxy:
