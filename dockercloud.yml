@@ -3,18 +3,18 @@ api-server:
   command: node api-server
   environment:
     - VIRTUAL_HOST=api.cloud
-  image: cotedemo/dockercloud-microservices:api
+  image: anvitamishra/msavecdockercloud:api
   ports:
     - '3000'
   restart: always
   tags:
-    - services
+    - nodecluster-name=services
 time-service:
   autoredeploy: true
   command: node time-service
-  image: cotedemo/dockercloud-microservices:time
+  image: anvitamishra/msavecdockercloud:time
   tags:
-    - services
+    - nodecluster-name=services
   restart: always
 proxy:
   image: dockercloud/haproxy:1.5.1
@@ -27,4 +27,4 @@ proxy:
   roles:
     - global
   tags:
-    - proxy
+    - nodecluster-name=proxy
